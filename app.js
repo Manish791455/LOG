@@ -5,6 +5,7 @@ var database = {
    referenceEmail :'naniroy@gmail.com',
    
 }
+console.log(database)
 function log(){
    var userEmail = prompt('enter your email')
    if(userEmail===database.email){
@@ -24,15 +25,37 @@ function log(){
 
                            if(conf===Otp){
                                  var newp = prompt('otp successful please enter new password')
+                                 var newdp = database;
+                                 newdp.password = newp;
+                                 console.log(database);//  here  we can see in the object password is changed 
                                  if(newp){
                                     alert('password changed successfully')
+                                        var userEmail2 = prompt('enter your email')
+                                        function log4(){
+                                            if(userEmail2===database.email){
+                                              var pss2 = prompt('enter passsword')
+                                              function log5(){
+                                                  if(pss2===database.password){
+                                                    alert('login successful'+' '+'welcome to next-level')
+                                                  }
+                                                  else{
+                                                      alert('wrong password')
+                                                  }
+                                              }
+                                              log5()
+
+                                            }
+                                            else{
+                                                alert('incorrect emial')
+                                            }
+                                        }
+                                        log4()
+                                    
                                  }
                                  else if(newp===''){
                                      alert('password setting failed')
                                  }
-                                 var newdp = database;
-                                 newdp.password = newp;
-                                 console.log(database);//  here  we can see in the object password is changed 
+                                
                            }
                            else{
                                alert ('wrong otp')
